@@ -11,7 +11,7 @@ from src.storage import (
     load_seen_job_ids,
     save_seen_job_ids,
 )
-
+from src.sources.asml import AsmlSource
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -39,6 +39,9 @@ def create_source(config: dict):
 
     if source_type == "generic_html":
         return GenericHtmlSource(config)
+
+    if source_type == "asml":
+        return AsmlSource(config)
 
     raise ValueError(
         f"Unsupported source type: {source_type!r} "
@@ -89,7 +92,10 @@ def main() -> None:
                 "source failed."
             )
 
-        print("No jobs were collected.")
+        print(
+            "No matching jobs are currently available. "
+            "The monitored sources were checked successfully."
+        )
         return
 
     seen_job_ids = load_seen_job_ids()

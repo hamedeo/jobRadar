@@ -1,16 +1,10 @@
 [
   {
-    "id": "example-company",
-    "name": "Example Company Careers",
-    "company": "Example Company",
-    "enabled": false,
-    "type": "generic_html",
-    "url": "https://example.com/careers",
-    "selectors": {
-      "job": ".job-card",
-      "title": ".job-title",
-      "location": ".job-location",
-      "link": "a"
-    }
+    "id": "asml-mechanical-netherlands",
+    "name": "ASML Careers",
+    "company": "ASML",
+    "enabled": true,
+    "type": "asml",
+    "url": "https://www.asml.com/en/careers/find-your-job?job_country=Netherlands&job_degrees=Bachelor%7CMaster%7CPhD&job_educational_backgrounds=Mechanical+Engineering&job_experience_levels=0-1+year%7C2-3+years&job_type=Fix"
   }
 ]
