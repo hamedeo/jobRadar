@@ -1,0 +1,16 @@
+[
+  {
+    "id": "example-company",
+    "name": "Example Company Careers",
+    "company": "Example Company",
+    "enabled": false,
+    "type": "generic_html",
+    "url": "https://example.com/careers",
+    "selectors": {
+      "job": ".job-card",
+      "title": ".job-title",
+      "location": ".job-location",
+      "link": "a"
+    }
+  }
+]
