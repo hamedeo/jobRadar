@@ -1,4 +1,4 @@
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -21,18 +21,51 @@ class GenericHtmlSource(JobSource):
             timeout=30,
             headers={
                 "User-Agent": (
-                    "Mozilla/5.0 "
-                    "(compatible; JobRadar/1.0; "
+                    "Mozilla/5.0 (compatible; JobRadar/1.0; "
                     "+https://github.com/hamedeo/job-radar)"
                 )
             },
         )
-
         response.raise_for_status()
 
         soup = BeautifulSoup(response.text, "html.parser")
-        job_elements = soup.select(self.selectors["job"])
 
+        if "jobLink" in self.selectors:
+            return self._fetch_from_job_links(soup)
+
+        return self._fetch_from_job_cards(soup)
+
+    def _fetch_from_job_links(self, soup: BeautifulSoup) -> list[Job]:
+        jobs_by_url: dict[str, Job] = {}
+
+        for link in soup.select(self.selectors["jobLink"]):
+            href = link.get("href")
+            title = link.get_text(" ", strip=True)
+
+            if not href or not title:
+                continue
+
+            job_url = urljoin(self.url, href)
+
+            if job_url.rstrip("/") == self.url.rstrip("/"):
+                continue
+
+            job_id = self._job_id_from_url(job_url)
+
+            jobs_by_url[job_url] = Job(
+                source_id=self.source_id,
+                source_name=self.source_name,
+                job_id=job_id,
+                title=title,
+                url=job_url,
+                company=self.company,
+                location="",
+            )
+
+        return list(jobs_by_url.values())
+
+    def _fetch_from_job_cards(self, soup: BeautifulSoup) -> list[Job]:
+        job_elements = soup.select(self.selectors["job"])
         jobs: list[Job] = []
 
         for element in job_elements:
@@ -63,12 +96,10 @@ class GenericHtmlSource(JobSource):
             job_id = ""
 
             if job_id_attribute:
-                job_id = str(
-                    element.get(job_id_attribute, "")
-                ).strip()
+                job_id = str(element.get(job_id_attribute, "")).strip()
 
             if not job_id:
-                job_id = job_url
+                job_id = self._job_id_from_url(job_url)
 
             jobs.append(
                 Job(
@@ -83,3 +114,8 @@ class GenericHtmlSource(JobSource):
             )
 
         return jobs
+
+    @staticmethod
+    def _job_id_from_url(url: str) -> str:
+        path = urlparse(url).path.rstrip("/")
+        return path.split("/")[-1]

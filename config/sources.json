@@ -6,5 +6,13 @@
     "enabled": true,
     "type": "asml",
     "url": "https://www.asml.com/en/careers/find-your-job?job_country=Netherlands&job_degrees=Bachelor%7CMaster%7CPhD&job_educational_backgrounds=Mechanical+Engineering&job_experience_levels=0-1+year%7C2-3+years&job_type=Fix"
+  },
+  {
+    "id": "tmc-mechanical-netherlands",
+    "name": "The Member Company Careers",
+    "company": "The Member Company",
+    "enabled": true,
+    "type": "tmc",
+    "url": "https://www.themembercompany.com/careers?experience[]=0+-+2+years&experience[]=2+-+5+years&expertise=mechanical&location=netherlands"
   }
 ]
