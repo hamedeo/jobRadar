@@ -14,5 +14,47 @@
     "enabled": true,
     "type": "tmc",
     "url": "https://www.themembercompany.com/careers?experience[]=0+-+2+years&experience[]=2+-+5+years&expertise=mechanical&location=netherlands"
+  },
+  {
+    "id": "demcon-mechanical-engineering",
+    "name": "DEMCON Careers",
+    "company": "DEMCON",
+    "enabled": true,
+    "type": "demcon",
+    "url": "https://careersatdemcon.com/vacancies",
+    "requiredExpertises": [
+      "Engineering",
+      "Project management"
+    ],
+    "requiredFunctions": [
+      "Mechanical engineer",
+      "Project manager"
+    ]
+  },
+  {
+  "id": "innoflex-mechanical-engineer",
+  "name": "InnoFlex Careers",
+  "company": "InnoFlex",
+  "enabled": true,
+  "type": "innoflex",
+  "url": "https://www.innoflexbv.com/careers",
+  "requiredTitleText": "Mechanical Engineer"
+  },
+  {
+  "id": "brunel-mechanical-netherlands",
+  "name": "Brunel Careers",
+  "company": "Brunel",
+  "enabled": true,
+  "type": "brunel",
+  "url": "https://www.brunel.net/en-nl/jobs/keyword/mechanical-engineer/utrecht-500km/from-0-years/from-2-years/academic-bachelor/academic-master",
+  "requiredTitleText": "Mechanical Engineer"
+  },
+  {
+  "id": "asm-mechanical-early-career",
+  "name": "ASM Careers",
+  "company": "ASM",
+  "enabled": true,
+  "type": "asm",
+  "url": "https://www.asm.com/open-vacancies?q=mechanical&Location=belgium--leuven&Location=finland--helsinki&Location=france--crolles&Location=germany--dresden&Location=japan--tokyo-tama-shi&Location=netherlands--almere&EducationLevel=bachelors&EducationLevel=masters&EducationLevel=phd&ExperienceLevel=early-career"
   }
 ]

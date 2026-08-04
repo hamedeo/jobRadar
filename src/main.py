@@ -13,6 +13,10 @@ from src.storage import (
 )
 from src.sources.asml import AsmlSource
 from src.sources.tmc import TmcSource
+from src.sources.demcon import DemconSource
+from src.sources.innoflex import InnoflexSource
+from src.sources.brunel import BrunelSource
+from src.sources.asm import AsmSource
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -46,6 +50,18 @@ def create_source(config: dict):
 
     if source_type == "tmc":
     	return TmcSource(config)
+
+    if source_type == "demcon":
+    	return DemconSource(config)
+    
+    if source_type == "innoflex":
+        return InnoflexSource(config)
+
+    if source_type == "brunel":
+        return BrunelSource(config)
+
+    if source_type == "asm":
+        return AsmSource(config)
 
     raise ValueError(
         f"Unsupported source type: {source_type!r} "

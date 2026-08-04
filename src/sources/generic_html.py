@@ -14,6 +14,10 @@ class GenericHtmlSource(JobSource):
         self.company = config.get("company", config["name"])
         self.url = config["url"]
         self.selectors = config["selectors"]
+        self.required_title_text = config.get(
+            "requiredTitleText",
+            "",
+        ).casefold()
 
     def fetch_jobs(self) -> list[Job]:
         response = requests.get(
@@ -41,6 +45,12 @@ class GenericHtmlSource(JobSource):
         for link in soup.select(self.selectors["jobLink"]):
             href = link.get("href")
             title = link.get_text(" ", strip=True)
+
+            if (
+                self.required_title_text
+                and self.required_title_text not in title.casefold()
+            ):
+                continue
 
             if not href or not title:
                 continue
