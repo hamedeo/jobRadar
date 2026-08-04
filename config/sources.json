@@ -56,5 +56,13 @@
   "enabled": true,
   "type": "asm",
   "url": "https://www.asm.com/open-vacancies?q=mechanical&Location=belgium--leuven&Location=finland--helsinki&Location=france--crolles&Location=germany--dresden&Location=japan--tokyo-tama-shi&Location=netherlands--almere&EducationLevel=bachelors&EducationLevel=masters&EducationLevel=phd&ExperienceLevel=early-career"
+  },
+  {
+  "id": "haskoning-filtered-vacancies",
+  "name": "Haskoning Careers",
+  "company": "Haskoning",
+  "enabled": true,
+  "type": "haskoning",
+  "url": "https://www.haskoning.com/en/careers/vacancies?resultsPerPage=20&selectedFilters=country%3BNetherlands%2CGermany%2CUnited%2BKingdom%7CdutchRequirement%3B%7Cexperience%3B%7B747E1AD0-CB80-485C-B183-CFF7C686C705%7D%7Ccategory%3B%7B2877033B-724C-4835-9783-D9C590947A50%7D&pageNumber=1"
   }
 ]
