@@ -46,8 +46,8 @@
   "company": "Brunel",
   "enabled": true,
   "type": "brunel",
-  "url": "https://www.brunel.net/en-nl/jobs/keyword/mechanical-engineer/utrecht-500km/from-0-years/from-2-years/academic-bachelor/academic-master",
-  "requiredTitleText": "Mechanical Engineer"
+  "url": "https://www.brunel.net/en-nl/jobs/keyword/mechanical/utrecht-500km/from-0-years/from-2-years/academic-bachelor/academic-master",
+  "requiredTitleText": "Mechanical"
   },
   {
   "id": "asm-mechanical-early-career",
@@ -64,5 +64,14 @@
   "enabled": true,
   "type": "haskoning",
   "url": "https://www.haskoning.com/en/careers/vacancies?resultsPerPage=20&selectedFilters=country%3BNetherlands%2CGermany%2CUnited%2BKingdom%7CdutchRequirement%3B%7Cexperience%3B%7B747E1AD0-CB80-485C-B183-CFF7C686C705%7D%7Ccategory%3B%7B2877033B-724C-4835-9783-D9C590947A50%7D&pageNumber=1"
+  },
+  {
+    "id": "vdl-mechanical-engineer",
+    "name": "VDL Careers",
+    "company": "VDL Groep",
+    "enabled": true,
+    "type": "vdl",
+    "url": "https://www.werkenbijvdl.nl/vacatures/search/Mechanical",
+    "requiredTitleText": "Mechanical"
   }
 ]

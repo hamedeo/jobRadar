@@ -18,6 +18,7 @@ from src.sources.innoflex import InnoflexSource
 from src.sources.brunel import BrunelSource
 from src.sources.asm import AsmSource
 from src.sources.haskoning import HaskoningSource
+from src.sources.vdl import VdlSource
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -66,6 +67,9 @@ def create_source(config: dict):
 
     if source_type == "haskoning":
         return HaskoningSource(config)
+
+    if source_type == "vdl":
+        return VdlSource(config)
 
     raise ValueError(
         f"Unsupported source type: {source_type!r} "
