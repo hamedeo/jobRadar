@@ -19,7 +19,7 @@ class BrunelSource(JobSource):
 
         self.required_title_text = config.get(
             "requiredTitleText",
-            "Mechanical Engineer",
+            "Mechanical",
         ).casefold()
 
     def fetch_jobs(self) -> list[Job]:
@@ -96,7 +96,7 @@ class BrunelSource(JobSource):
                 if not jobs:
                     raise RuntimeError(
                         "Brunel loaded, but no vacancy titles containing "
-                        "'Mechanical Engineer' were extracted."
+                        "'Mechanical' were extracted."
                     )
 
                 return jobs
