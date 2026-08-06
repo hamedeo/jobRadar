@@ -73,5 +73,14 @@
     "type": "vdl",
     "url": "https://www.werkenbijvdl.nl/vacatures/search/Mechanical",
     "requiredTitleText": "Mechanical"
+  },
+  {
+    "id": "aae",
+    "name": "AAE Careers",
+    "type": "aae",
+    "url": "https://join.aae.tech/option/teampaginas/engineering-r-d",
+    "keywords": [
+      "mechanical"
+    ]
   }
 ]
