@@ -149,5 +149,24 @@
         "url": "https://hittech.com/location/hittech-rsp-technology/"
       }
     ]
+  },
+  {
+    "id": "neitraco-relevant-engineering",
+    "name": "Neitraco Groep Careers",
+    "company": "Neitraco Groep",
+    "enabled": true,
+    "type": "neitraco",
+    "url": "https://neitraco.com/technische-vacatures/",
+    "keywords": [
+      "mechanical",
+      "project"
+    ],
+    "locations": [
+      "Bunnik",
+      "Roosendaal",
+      "Best",
+      "Woerden",
+      "Limburg"
+    ]
   }
 ]
