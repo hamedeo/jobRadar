@@ -21,6 +21,7 @@ from src.sources.haskoning import HaskoningSource
 from src.sources.vdl import VdlSource
 from src.sources.aae import AaeSource
 from src.sources.nobleo import NobleoSource
+from src.sources.hittech import HittechSource
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -78,7 +79,10 @@ def create_source(config: dict):
 
     if source_type == "nobleo":
         return NobleoSource(config)
-    
+
+    if source_type == "hittech":
+        return HittechSource(config)
+
     raise ValueError(
         f"Unsupported source type: {source_type!r} "
         f"for source "

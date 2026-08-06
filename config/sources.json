@@ -94,5 +94,60 @@
       "mechanical",
       "project"
     ]
+  },
+  {
+    "id": "hittech-relevant-europe",
+    "name": "Hittech Careers",
+    "company": "Hittech Group",
+    "enabled": true,
+    "type": "hittech",
+    "keywords": [
+      "mechanical",
+      "project"
+    ],
+    "pages": [
+      {
+        "id": "bihca",
+        "company": "Hittech Bihca",
+        "location": "Winterswijk, Netherlands",
+        "url": "https://hittech.com/location/hittech-bihca/"
+      },
+      {
+        "id": "comac",
+        "company": "Hittech Comac",
+        "location": "Deurne, Netherlands",
+        "url": "https://hittech.com/location/hittech-comac/"
+      },
+      {
+        "id": "gieterij-nunspeet",
+        "company": "Hittech Gieterij Nunspeet",
+        "location": "Nunspeet, Netherlands",
+        "url": "https://hittech.com/location/hittech-gieterij-nunspeet/"
+      },
+      {
+        "id": "landes",
+        "company": "Hittech Landes",
+        "location": "Emmen, Netherlands",
+        "url": "https://hittech.com/location/hittech-landes/"
+      },
+      {
+        "id": "multin",
+        "company": "Hittech Multin",
+        "location": "Den Haag, Netherlands",
+        "url": "https://hittech.com/location/hittech-multin/"
+      },
+      {
+        "id": "prontor",
+        "company": "Hittech Prontor",
+        "location": "Bad Wildbad, Germany",
+        "url": "https://hittech.com/location/hittech-prontor/"
+      },
+      {
+        "id": "rsp-technology",
+        "company": "Hittech RSP Technology",
+        "location": "Farmsum, Netherlands",
+        "url": "https://hittech.com/location/hittech-rsp-technology/"
+      }
+    ]
   }
 ]
