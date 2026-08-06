@@ -168,5 +168,17 @@
       "Woerden",
       "Limburg"
     ]
+  },
+  {
+    "id": "solarge-relevant-engineering",
+    "name": "Solarge Careers",
+    "company": "Solarge",
+    "enabled": true,
+    "type": "solarge",
+    "url": "https://solarge.com/en/discover/work-at/",
+    "keywords": [
+      "mechanical",
+      "project"
+    ]
   }
 ]
