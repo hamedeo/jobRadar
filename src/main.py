@@ -20,6 +20,7 @@ from src.sources.asm import AsmSource
 from src.sources.haskoning import HaskoningSource
 from src.sources.vdl import VdlSource
 from src.sources.aae import AaeSource
+from src.sources.nobleo import NobleoSource
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -74,7 +75,10 @@ def create_source(config: dict):
 
     if source_type == "aae":
         return AaeSource(config)
-        
+
+    if source_type == "nobleo":
+        return NobleoSource(config)
+    
     raise ValueError(
         f"Unsupported source type: {source_type!r} "
         f"for source "

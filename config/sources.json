@@ -82,5 +82,17 @@
     "keywords": [
       "mechanical"
     ]
+  },
+  {
+    "id": "nobleo-relevant-engineering",
+    "name": "Nobleo Technology Careers",
+    "company": "Nobleo Technology",
+    "enabled": true,
+    "type": "nobleo",
+    "url": "https://nobleo-technology.nl/engineering-job-at-nobleo/",
+    "keywords": [
+      "mechanical",
+      "project"
+    ]
   }
 ]
