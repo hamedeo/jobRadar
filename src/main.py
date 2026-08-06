@@ -24,6 +24,7 @@ from src.sources.nobleo import NobleoSource
 from src.sources.hittech import HittechSource
 from src.sources.neitraco import NeitracoSource
 from src.sources.solarge import SolargeSource
+from src.sources.axces import AxcesSource
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -90,6 +91,9 @@ def create_source(config: dict):
 
     if source_type == "solarge":
         return SolargeSource(config)
+
+    if source_type == "axces":
+        return AxcesSource(config)
 
     raise ValueError(
         f"Unsupported source type: {source_type!r} "

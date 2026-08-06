@@ -180,5 +180,22 @@
       "mechanical",
       "project"
     ]
+  },
+  {
+    "id": "axces-relevant-engineering",
+    "name": "Axces Careers",
+    "company": "Axces",
+    "enabled": true,
+    "type": "axces",
+    "url": "https://axces.com/careers",
+    "keywords": [
+      "mechanical",
+      "project"
+    ],
+    "locations": [
+      "Netherlands",
+      "Poland",
+      "Singapore"
+    ]
   }
 ]
