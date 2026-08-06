@@ -197,5 +197,19 @@
       "Poland",
       "Singapore"
     ]
+  },
+  {
+    "id": "daf-engineering",
+    "name": "DAF Careers",
+    "company": "DAF Trucks",
+    "enabled": true,
+    "type": "daf",
+    "url": "https://www.daf.com/en/working-at-daf/vacancies?functiongroup=Development-Engineering-and-Manufacturing&Page=1",
+    "keywords": [
+      "mechanical",
+      "project",
+      "engineer"
+    ],
+    "max_pages": 10
   }
 ]

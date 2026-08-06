@@ -25,6 +25,7 @@ from src.sources.hittech import HittechSource
 from src.sources.neitraco import NeitracoSource
 from src.sources.solarge import SolargeSource
 from src.sources.axces import AxcesSource
+from src.sources.daf import DafSource
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -94,6 +95,9 @@ def create_source(config: dict):
 
     if source_type == "axces":
         return AxcesSource(config)
+
+    if source_type == "daf":
+        return DafSource(config)
 
     raise ValueError(
         f"Unsupported source type: {source_type!r} "
