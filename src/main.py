@@ -11,22 +11,7 @@ from src.storage import (
     load_seen_job_ids,
     save_seen_job_ids,
 )
-from src.sources.asml import AsmlSource
-from src.sources.tmc import TmcSource
-from src.sources.demcon import DemconSource
-from src.sources.innoflex import InnoflexSource
-from src.sources.brunel import BrunelSource
-from src.sources.asm import AsmSource
-from src.sources.haskoning import HaskoningSource
-from src.sources.vdl import VdlSource
-from src.sources.aae import AaeSource
-from src.sources.nobleo import NobleoSource
-from src.sources.hittech import HittechSource
-from src.sources.neitraco import NeitracoSource
-from src.sources.solarge import SolargeSource
-from src.sources.axces import AxcesSource
-from src.sources.daf import DafSource
-from src.sources.nearfield import NearfieldSource
+from importlib import import_module
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -52,63 +37,26 @@ def load_source_configs() -> list[dict]:
 def create_source(config: dict):
     source_type = config.get("type")
 
-    if source_type == "generic_html":
-        return GenericHtmlSource(config)
+    if not source_type:
+        raise ValueError(
+            f"Source has no type: {config.get('name', config.get('id'))}"
+        )
 
-    if source_type == "asml":
-        return AsmlSource(config)
-
-    if source_type == "tmc":
-    	return TmcSource(config)
-
-    if source_type == "demcon":
-    	return DemconSource(config)
-    
-    if source_type == "innoflex":
-        return InnoflexSource(config)
-
-    if source_type == "brunel":
-        return BrunelSource(config)
-
-    if source_type == "asm":
-        return AsmSource(config)
-
-    if source_type == "haskoning":
-        return HaskoningSource(config)
-
-    if source_type == "vdl":
-        return VdlSource(config)
-
-    if source_type == "aae":
-        return AaeSource(config)
-
-    if source_type == "nobleo":
-        return NobleoSource(config)
-
-    if source_type == "hittech":
-        return HittechSource(config)
-
-    if source_type == "neitraco":
-        return NeitracoSource(config)
-
-    if source_type == "solarge":
-        return SolargeSource(config)
-
-    if source_type == "axces":
-        return AxcesSource(config)
-
-    if source_type == "daf":
-        return DafSource(config)
-
-    if source_type == "nearfield":
-        return NearfieldSource(config)
-
-    raise ValueError(
-        f"Unsupported source type: {source_type!r} "
-        f"for source "
-        f"{config.get('name', config.get('id'))!r}"
+    module = import_module(
+        f"src.sources.{source_type}"
     )
 
+    class_name = (
+        "".join(
+            part.capitalize()
+            for part in source_type.split("_")
+        )
+        + "Source"
+    )
+
+    source_class = getattr(module, class_name)
+
+    return source_class(config)
 
 def collect_jobs() -> tuple[list[Job], int]:
     jobs: list[Job] = []
