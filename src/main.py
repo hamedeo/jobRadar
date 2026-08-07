@@ -26,6 +26,7 @@ from src.sources.neitraco import NeitracoSource
 from src.sources.solarge import SolargeSource
 from src.sources.axces import AxcesSource
 from src.sources.daf import DafSource
+from src.sources.nearfield import NearfieldSource
 
 SOURCES_FILE = Path("config/sources.json")
 
@@ -98,6 +99,9 @@ def create_source(config: dict):
 
     if source_type == "daf":
         return DafSource(config)
+
+    if source_type == "nearfield":
+        return NearfieldSource(config)
 
     raise ValueError(
         f"Unsupported source type: {source_type!r} "

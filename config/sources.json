@@ -211,5 +211,18 @@
       "engineer"
     ],
     "max_pages": 10
+  },
+  {
+    "id": "nearfield-engineering",
+    "name": "Nearfield Instruments Careers",
+    "company": "Nearfield Instruments",
+    "enabled": true,
+    "type": "nearfield",
+    "url": "https://careers.nearfieldinstruments.com/jobs?jobs-f1082b85%5Bcountry%5D%5B%5D=NL",
+    "keywords": [
+      "mechanical",
+      "project",
+      "system"
+    ]
   }
 ]
